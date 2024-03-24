@@ -1,15 +1,28 @@
 from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
 
-
 @app.route('/')
-def hello_world():  # put application's code here
+def render_index():  # put application's code here
     return render_template('index.html')
 
 @app.route('/start')
-def start():
+def render_start():
     return render_template('start.html')
+
+@app.route('/love')
+def render_love():
+
+    return render_template('love_dialogue.html')
+
+@app.route('/money')
+def render_money():
+    return render_template('money.html')
+
+@app.route('/intelligence')
+def render_intelligence():
+    return render_template('intelligence.html')
 
 if __name__ == '__main__':
     app.run()

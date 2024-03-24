@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+}
+
+:root {
+    /* primary scale */
+    --primary: #810C95;
+    --primary100: #E6CEEA;
+    --primary200: #CD9ED5;
+    --primary300: #B36DBF;
+    --primary400: #9A3DAA;
+    --primary500: #810C95;
+    --primary600: #670A77;
+    --primary700: #4D0759;
+    --primary800: #34053C;
+    --primary900: #1A021E;
+
+     /* secondary scale */
+    --secondary: #B8195B;
+    --secondary100: #F1D1DE;
+    --secondary200: #E3A3BD;
+    --secondary300: #D4759D;
+    --secondary400: #C6477C;
+    --secondary500: #B8195B;
+    --secondary600: #931449;
+    --secondary700: #6E0F37;
+    --secondary800: #4A0A24;
+    --secondary900: #250512;
+
+    /* gray scale */
+    --gray100: #F7F7F7;
+    --gray200: #F0F0F0;
+    --gray300: #E8E8E8;
+    --gray400: #E1E1E1;
+    --gray500: #D9D9D9;
+    --gray600: #AEAEAE;
+    --gray700: #828282;
+    --gray800: #575757;
+    --gray900: #2B2B2B;
+
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+* {
+    /* 폰트 설정 */
+    color: var(--black);
+    font-size: 1rem;
+    font-family: 'Pretendard';
+    text-decoration: none;
+    line-height: 160%;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

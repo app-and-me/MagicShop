@@ -1,0 +1,41 @@
+#main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7vw;
+}
+
+.potion {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.potion:hover {
+    transform: scale(120%, 120%);
+}
+
+.potion-img {
+    width: 18vw;
+}
+
+.potion-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.go-to-rule {
+    position: fixed;
+    right: 64px;
+    bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
