@@ -6,8 +6,28 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>마법상점</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/start.css') }}">
 </head>
 <body>
-    hi 마법상점
+<main id="main">
+
+    <a href="/love" class="potion">
+        <img src="{{ url_for('static', filename='images/love/potion.PNG') }}" alt="potion" class="potion-img">
+        <div class="potion-name">사랑</div>
+    </a>
+    <a href="/money" class="potion">
+        <img src="{{ url_for('static', filename='images/money/potion.PNG') }}" alt="potion" class="potion-img">
+        <div class="potion-name">돈</div>
+    </a>
+    <a href="/intelligence" class="potion">
+        <img src="{{ url_for('static', filename='images/study/potion.PNG') }}" alt="potion" class="potion-img">
+        <div class="potion-name">지성</div>
+    </a>
+</main>
+<a class="go-to-rule">
+    <div class="rule-label">게임 방법</div>
+    <img src="{{ url_for('static', filename='images/icon/book.png') }}" alt="book" class="rule-img">
+</a>
 </body>
 </html>
