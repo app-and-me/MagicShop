@@ -18,11 +18,11 @@ def render_love():
 
 @app.route('/money')
 def render_money():
-    return render_template('money.html')
+    return render_template('money_dialogue.html')
 
 @app.route('/intelligence')
 def render_intelligence():
-    return render_template('intelligence.html')
+    return render_template('intelligence_dialogue.html')
 
 if __name__ == '__main__':
     app.run()
