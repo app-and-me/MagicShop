@@ -24,5 +24,9 @@ def render_money():
 def render_intelligence():
     return render_template('intelligence_dialogue.html')
 
+@app.route('/making-potion')
+def render_making_potion():
+    return render_template('making_potion.html')
+
 if __name__ == '__main__':
     app.run()
