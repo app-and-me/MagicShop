@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>마법 상점</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-    <h1>소원을 이루어 드립니다,마법상점</h1>
-    <a href="/start">tab to start</a>
+    <main id="main">
+        <img src="{{  url_for('static', filename='images/title.png') }}" />
+        <a href="/start">
+            <img src="{{  url_for('static', filename='images/tap_to_start.png') }}" />
+        </a>
+    </main>
     <audio id="bgm" src="{{ url_for('static', filename='music/opening_bg.mp3') }}" loop autoplay></audio>
 </body>
 </html>
