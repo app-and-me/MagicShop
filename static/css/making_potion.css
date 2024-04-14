@@ -1,0 +1,159 @@
+#main {
+    position: relative;
+    height: 88vh;
+    background: url("../images/bg/making_potion_bg.png") center/cover;
+}
+
+#main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg/making_potion_bg.png") center/cover;
+    filter: brightness(0.6) blur(15px); /* 밝기 50%, blur 5px */
+    z-index: -1; /* 배경을 요소 뒤로 이동 */
+}
+
+p {
+    color: white;
+}
+
+.desk {
+    position: fixed;
+    width: 100vw;
+    height: 12vh;
+    background-color: #8D6A67;
+    border-top: 10px solid #BC8A6A;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.container.things {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10vw;
+    padding: 10px 30px
+}
+
+.thing-img {
+    width: 7vw;
+    cursor: pointer;
+}
+
+.thing {
+    cursor: pointer;
+    text-align: center; /* 내용 가운데 정렬 */
+    animation: floatAnimation 3s infinite alternate; /* floatAnimation 애니메이션 적용 */
+}
+
+.thing:nth-child(odd) {
+    animation:  floatAnimation 2s infinite alternate;
+    align-items: flex-start;
+}
+
+.thing:nth-child(3n) {
+    animation:  floatAnimation 5s infinite alternate;
+    align-items: flex-end;
+}
+
+.thing-0 {
+    margin-left: 10vw;
+}
+
+.thing-4 {
+    margin-left: 14vw;
+}
+
+.thing-8 {
+    margin-left: -6vw;
+    margin-right: 25vw;
+}
+
+.thing-10 {
+    margin-left: 15vw;
+    margin-right: 28vw;
+}
+
+.name,
+.desc {
+    opacity: 0;
+}
+
+.jar {
+    position: fixed;
+    width: 25vw;
+    height: 25vw;
+    bottom: 12vh;
+    left: 37.5vw;
+    background-color: white;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* 50% 지점까지 위로 이동 */
+    }
+    100% {
+        transform: translateY(0); /* 다시 초기 위치로 이동 */
+    }
+}
+
+.thing-img {
+    max-width: 100%; /* 이미지 크기 제한 */
+    height: auto; /* 이미지 비율 유지 */
+}
+
+.thing p {
+    margin: 5px 0; /* 단락 간격 설정 */
+}
+
+.desk .thing {
+    width: 4vw;
+    margin: 0;
+    padding: 0;
+}
+
+.thing .name,
+.thing .desc {
+    opacity: 0;
+}
+
+.thing:hover .name,
+.thing:hover .desc {
+    opacity: 1;
+}
+
+.desk-item {
+    width: 12vw;
+    height: 8vh;
+    background-color: #A68886;
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.desk-item:first-child {
+    margin-left: 10vw;
+}
+
+#next-button {
+    margin-left: 10vw;
+    outline: none;
+    border: none;
+    background-color: #A68886;
+    border-radius: 12px;
+    width: 12vw;
+    height: 8vh;
+    cursor: pointer;
+}

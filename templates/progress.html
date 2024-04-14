@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>마법상점</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/progress.css') }}">
+</head>
+<body>
+<main id="main">
+    <img src="{{ url_for('static', filename='images/love/potion.PNG') }}" alt="potion" class="potion-img">
+    <div class="label">물약 추출 중...</div>
+    <div class="progress">0%</div>
+</main>
+<audio id="bgm" src="{{ url_for('static', filename='music/making_potion_bg.mp3') }}" loop autoplay></audio>
+<script src="{{ url_for('static', filename='js/progress.js') }}"></script>
+</body>
+</html>

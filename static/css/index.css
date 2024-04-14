@@ -1,0 +1,30 @@
+#main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 145px;
+}
+
+#main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(120%);
+    background: url("../images/bg/index_bg.png") center/cover;
+    filter: brightness(0.5) blur(2px); /* 밝기 50%, blur 5px */
+    z-index: -1; /* 배경을 요소 뒤로 이동 */
+}
+
+a > img{
+    transition: 0.2s;
+}
+
+a:hover > img {
+    transform: scale(120%);
+}
