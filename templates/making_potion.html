@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>마법 상점</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/making_potion.css') }}">
+</head>
+<body>
+<main id="main">
+    <div class="container things">
+    </div>
+    <div class="jar">항아리</div>
+</main>
+
+<div class="desk">
+    <div class="desk-item"></div>
+    <div class="desk-item"></div>
+    <div class="desk-item"></div>
+    <div class="desk-item"></div>
+    <button id="next-button">next</button>
+</div>
+
+<audio id="bgm" src="{{ url_for('static', filename='music/opening_bg.mp3') }}" loop autoplay></audio>
+
+<script src="{{  url_for('static', filename='js/making_potion.js') }}"></script>
+</body>
+</html>
