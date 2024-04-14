@@ -60,10 +60,10 @@ let things = [
         "desc": "전교 1등의 안경이다. 보기만 해도 똑똑해지는 기분이 든다."
     },
 ]
-
 let container = document.querySelector('.container.things');
 let desk = document.querySelector('.desk');
 let deskItems = []; // 이미 desk에 있는 아이템의 인덱스를 저장하는 배열
+let jar = document.querySelector('.jar');
 
 things.forEach((item, index) => {
     let itemDiv = document.createElement('div');
@@ -88,16 +88,35 @@ things.forEach((item, index) => {
 
     container.appendChild(itemDiv);
 
-    itemDiv.addEventListener('click', () => {
-        // 이미 desk에 있는지 여부 확인
-        if (!deskItems.includes(index) && deskItems.length < 4) {
-            itemDiv.style.opacity = '0';
-            let deskItem = document.getElementsByClassName('desk-item')[deskItems.length];
-            deskItem.appendChild(img.cloneNode(true)); // 클론 노드를 추가하여 원본 아이템 유지
-            deskItems.push(index); // desk에 추가된 아이템의 인덱스 저장
-            console.log('click');
-        }
+    // 드래그 가능하게 만들기
+    itemDiv.draggable = true;
+
+    // 드래그 이벤트 처리
+    itemDiv.addEventListener('dragstart', (event) => {
+        event.dataTransfer.setData('text/plain', index); // 드래그된 아이템의 인덱스 전달
     });
+});
+
+// 드롭 영역 설정
+jar.addEventListener('dragover', (event) => {
+    event.preventDefault(); // 기본 동작 방지
+});
+
+// 드롭 이벤트 처리
+jar.addEventListener('drop', (event) => {
+    event.preventDefault(); // 기본 동작 방지
+    const index = event.dataTransfer.getData('text/plain'); // 드래그된 아이템의 인덱스 가져오기
+
+    if (!deskItems.includes(index) && deskItems.length < 4) {
+        let deskItem = document.getElementsByClassName('desk-item')[deskItems.length];
+        let item = document.querySelector(`.thing-${index} .thing-img`);
+        item.style.opacity = '0';
+
+        let copyItem = item.cloneNode(true);
+        copyItem.style.opacity = '1';
+        deskItem.appendChild(copyItem); // 클론 노드를 추가하여 원본 아이템 유지
+        deskItems.push(index);
+    }
 });
 
 const queryString = window.location.search;
@@ -106,15 +125,16 @@ const type = urlParams.get('type');
 
 const nextButton = document.getElementById('next-button');
 nextButton.addEventListener('click', () => {
+    console.log(deskItems)
     if (deskItems.length < 4) {
         alert('재료를 총 4개 선택해야 만들 수 있어요!');
-    } else if (deskItems.includes(2) && deskItems.includes(6) && deskItems.includes(8) && deskItems.includes(9) && type === 'love') {
-        window.open('/success?type=love', '_top');
-    } else if (deskItems.includes(0) && deskItems.includes(1) && deskItems.includes(4) && deskItems.includes(5) && type === 'money') {
-        window.open('/success?type=money', '_top');
-    } else if (deskItems.includes(3) && deskItems.includes(7) && deskItems.includes(10) && deskItems.includes(11) && type === 'intelligence') {
-        window.open('/success?type=intelligence', '_top');
+    } else if (deskItems.includes('2') && deskItems.includes('6') && deskItems.includes('8') && deskItems.includes('9') && type === 'love') {
+        window.open('/progress?type=love&isSuccess=true', '_top');
+    } else if (deskItems.includes('0') && deskItems.includes('1') && deskItems.includes('4') && deskItems.includes('5') && type === 'money') {
+        window.open('/progress?type=money&isSuccess=true', '_top');
+    } else if (deskItems.includes('3') && deskItems.includes('7') && deskItems.includes('10') && deskItems.includes('11') && type === 'intelligence') {
+        window.open('/progress?type=intelligence&isSuccess=true', '_top');
     } else {
-        window.open('/fail', '_top');
+        window.open(`/progress?type=${type}&isSuccess=false`, '_top');
     }
 })
