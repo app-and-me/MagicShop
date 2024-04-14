@@ -4,6 +4,18 @@
     background: url("../images/bg/making_potion_bg.png") center/cover;
 }
 
+#main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg/making_potion_bg.png") center/cover;
+    filter: brightness(0.6) blur(15px); /* 밝기 50%, blur 5px */
+    z-index: -1; /* 배경을 요소 뒤로 이동 */
+}
+
 p {
     color: white;
 }
@@ -22,16 +34,6 @@ p {
     gap: 20px;
 }
 
-
-#footer {
-    position: fixed;
-    left: 0;
-    bottom: 127px;
-    height: 127px;
-    border-top: 10px solid #785641;
-    background-color: #584240;
-    z-index: 0;
-}
 
 .container.things {
     display: flex;
