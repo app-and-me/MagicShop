@@ -1,7 +1,11 @@
-from flask import Flask, render_template
-import json
+from flask import Flask, render_template, request
+import serial
+import time
 
 app = Flask(__name__)
+
+# 시리얼 포트 설정 (Windows의 경우 'COM3', 'COM4' 등, Linux의 경우 '/dev/ttyUSB0', '/dev/ttyACM0' 등)
+ser = serial.Serial('COM3', 9600)
 
 @app.route('/')
 def render_index():
@@ -30,6 +34,12 @@ def render_ending():
 @app.route('/credit')
 def render_credit():
     return render_template('credit.html')
+
+@app.route('/trigger', methods=['POST'])
+def trigger_relay():
+    # Arduino에 신호를 보냅니다.
+    ser.write(b'1')  # '1'이라는 신호를 보냅니다. Arduino에서 이 신호를 감지하도록 설정
+    return {'status': 'success'}
 
 if __name__ == '__main__':
     app.run()
